@@ -1,32 +1,26 @@
 
 import React, { useState } from 'react';
+import s from './App.module.css';
 
 function App() {
     let [userDisOrNonDis, setB] = useState(false);
-	let newState = false
-    // let handleSetB = () => {
-    //     setB(prevState => {
+    let unblockBtn = userDisOrNonDis ?  s.btn3 : s.btn3block
+    function funSetB(){
+        setB(!userDisOrNonDis)
+        
+        
+    }
 
-    //         document.getElementById("btn1").disabled = !newState;
-    //         document.getElementById("btn2").disabled = !newState;
-    //         document.getElementById("btn3").disabled = newState;
-	// 		newState = !userDisOrNonDis;
-    //         console.log(newState);
-    //         return newState;
-    //     });
-    // };
-
-   
 
     return (
-        <div>
-            <button id="btn1" onClick={() => setB(true)} disabled={userDisOrNonDis}>
-                blok
+        <div class="id1">
+            <button className={unblockBtn} onClick={funSetB}>
+                block
             </button>
-            <button id="btn2">
+            <button id="btn2" disabled={userDisOrNonDis}>
                 <img src="foto-bl.png" alt="Button 2" />
             </button>
-            <button id="btn3" onClick={() => setB(false)} disabled={!userDisOrNonDis}>
+            <button className={!userDisOrNonDis ?  s.btn3 : s.btn3block} onClick={funSetB}>
                 unblock
             </button>
         </div>

@@ -4,6 +4,12 @@
 .id1 {background-color: blue;
 
 }
+.btn3{
+  display: none;
+}
+.btn3block{
+  display: block;
+}
 
 
 .App-logo {
